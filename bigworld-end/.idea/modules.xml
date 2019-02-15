@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bigworld-end.iml" filepath="$PROJECT_DIR$/bigworld-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client-user/client-user.iml" filepath="$PROJECT_DIR$/client-user/client-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-center/server-center.iml" filepath="$PROJECT_DIR$/server-center/server-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-config-git/server-config-git.iml" filepath="$PROJECT_DIR$/server-config-git/server-config-git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server-gateway/server-gateway.iml" filepath="$PROJECT_DIR$/server-gateway/server-gateway.iml" />
+    </modules>
+  </component>
+</project>

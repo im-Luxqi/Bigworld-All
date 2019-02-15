@@ -1,0 +1,17 @@
+info:
+  profile: default
+
+spring:
+  redis:
+    host: localhost
+    database: 7
+    pool:
+      max-active: 8
+      min-idle: 0
+      max-idle: 0
+      max-wait: -1
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7777/eureka/

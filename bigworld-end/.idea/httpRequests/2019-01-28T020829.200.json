@@ -1,0 +1,28 @@
+{
+  "code": 200,
+  "data": {
+    "authenticated": true,
+    "authorities": [
+      {
+        "authority": "user"
+      }
+    ],
+    "details": {
+      "remoteAddress": "127.0.0.1"
+    },
+    "name": "wxq",
+    "principal": {
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "authorities": [
+        {
+          "$ref": "$.data.authorities[0]"
+        }
+      ],
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "username": "wxq"
+    }
+  },
+  "msg": "OK"
+}

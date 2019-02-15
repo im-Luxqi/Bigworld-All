@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client-user" />
+        <module name="server-center" />
+        <module name="server-config-git" />
+        <module name="server-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bigworld-end" target="1.8" />
+      <module name="client-user" target="1.8" />
+      <module name="eureka-client-a" target="1.8" />
+      <module name="eureka-consumer" target="1.8" />
+      <module name="oldapi-gateway" target="1.8" />
+      <module name="oldcenter-server" target="1.8" />
+      <module name="oldclient-user" target="1.8" />
+      <module name="oldconfig-server-git" target="1.8" />
+      <module name="server-center" target="1.8" />
+      <module name="server-config-git" target="1.8" />
+      <module name="server-gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,29 @@
+{
+  "code": 200,
+  "data": {
+    "authenticated": true,
+    "authorities": [
+      {
+        "authority": "user"
+      }
+    ],
+    "details": {
+      "remoteAddress": "127.0.0.1"
+    },
+    "name": "wxq",
+    "principal": {
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "authorities": [
+        {
+          "$ref": "$.data.authorities[0]"
+        }
+      ],
+      "credentialsNonExpired": true,
+      "enabled": true,
+      "username": "wxq"
+    }
+  },
+  "msg": "OK",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyYW5kb21LZXkiOiJ0aHoxMjAiLCJzdWIiOiJ3eHEiLCJvcmciOiJqaW4iLCJuYW1lIjoi6ams6Zi_5L6sIiwiZXhwIjoxNTQ4ODI1MzE1LCJpYXQiOjE1NDg4MjE3MTUsImFnZSI6IjI4In0.nNNoaqsuiGu6uaKwO5q-vN1Wb41SkLK9WBvdooPXkOw"
+}
