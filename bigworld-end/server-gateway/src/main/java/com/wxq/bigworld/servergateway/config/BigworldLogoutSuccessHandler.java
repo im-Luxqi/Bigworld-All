@@ -44,9 +44,8 @@ public class BigworldLogoutSuccessHandler implements LogoutSuccessHandler {
             response.setContentType("application/json;charset=UTF-8");
             response.getWriter().write(JSON.toJSONString(new ResponseEntity(HttpStatus.OK.value(), "退出成功！").data(null)));
 
+        } else {
+            throw new RuntimeException("暂无权限");
         }
-        response.setHeader("Authorization", "");
-        response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(JSON.toJSONString(new ResponseEntity(HttpStatus.OK.value(), "退出成功！").data(null)));
     }
 }

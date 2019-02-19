@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/im-Luxqi/bigworld-configcenter
-          searchPaths: repos/bigworld
+          uri: https://github.com/im-Luxqi/Bigworld-All
+          searchPaths: bigworld-config/configFile
 server:
     port: 9999

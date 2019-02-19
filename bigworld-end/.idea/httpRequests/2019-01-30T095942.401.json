@@ -1,7 +1,0 @@
-{
-  "timestamp": 1548813582795,
-  "status": 401,
-  "error": "Unauthorized",
-  "message": "Full authentication is required to access this resource",
-  "path": "/test"
-}

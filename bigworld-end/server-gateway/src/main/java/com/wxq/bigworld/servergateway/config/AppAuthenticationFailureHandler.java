@@ -15,8 +15,6 @@ import java.io.IOException;
 
 /**
  * 自定义失败处理器
- *
- * @author chentongwei@bshf360.com 2018-03-26 14:02
  */
 public class AppAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 

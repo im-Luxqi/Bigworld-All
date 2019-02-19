@@ -12,18 +12,5 @@
         <module name="server-gateway" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bigworld-end" target="1.8" />
-      <module name="client-user" target="1.8" />
-      <module name="eureka-client-a" target="1.8" />
-      <module name="eureka-consumer" target="1.8" />
-      <module name="oldapi-gateway" target="1.8" />
-      <module name="oldcenter-server" target="1.8" />
-      <module name="oldclient-user" target="1.8" />
-      <module name="oldconfig-server-git" target="1.8" />
-      <module name="server-center" target="1.8" />
-      <module name="server-config-git" target="1.8" />
-      <module name="server-gateway" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

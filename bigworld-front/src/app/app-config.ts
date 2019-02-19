@@ -4,9 +4,12 @@ import {Injectable} from "@angular/core";
  */
 @Injectable()
 export class Config{
-  public appConfig:any = {
+  private appConfig:any = {
     baseUrl:"/apis",
     name: 'Bigworld',
     version: '1.0.0',
   };
+  private urls:any ={
+    login:"/login"
+  }
 }

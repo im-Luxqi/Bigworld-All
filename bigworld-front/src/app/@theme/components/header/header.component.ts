@@ -6,6 +6,8 @@ import { AnalyticsService } from '../../../@core/utils';
 import { LayoutService } from '../../../@core/utils';
 import { NbAuthService } from '@nebular/auth';
 import { Router } from '@angular/router';
+import { tap, take, map } from 'rxjs/operators';
+import { NbMenuBag } from '@nebular/theme/components/menu/menu.service';
 
 @Component({
   selector: 'ngx-header',
@@ -30,12 +32,33 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.nick);
+    this.userService.getUsers().subscribe(
+        (users: any) =>{
+          this.user = users.nick
+        }
+    );
 
-      this.menuService.onItemClick().subscribe(event => {
-        this.onContecxtItemSelection(event.item.title);
-      });
+      // this.menuService.onItemClick().subscribe(event => {
+      //   console.log(event);
+      //   this.onContecxtItemSelection(event.item.title);
+      // });
+      this.menuService.onItemClick()
+          .pipe(
+            map((tag:any)=> tag.item.title))
+          .subscribe(title=>{
+            console.log(title);
+            switch (title) {
+              case "Profile":
+                break;
+              case "Settings":
+                break;
+              case "Log out":
+              console.log("qwer");
+                this.router.navigate(["auth/logout"]);
+                // window.location.href = "/#/auth/logout";
+                break;
+            }
+          })
   }
 
   onContecxtItemSelection(title: any) {
@@ -45,10 +68,9 @@ export class HeaderComponent implements OnInit {
       case "Settings":
         break;
       case "Log out":
-      console.log("logout");
-      this.authService.logout("email");
-        // this.router.navigate["auth/logout"];
-        window.location.href = "/#/auth/logout";
+      // console.log("qwer");s
+        this.router.navigate["#/auth/logout"];
+        // window.location.href = "/#/auth/logout";
         break;
     }
   }

@@ -10,7 +10,7 @@ public enum JwtUrlEnum {
     /**
      * 退出登录
      */
-    LOGOUT("jwtLogout")
+    LOGOUT("logout")
     ;
 
     private String url;

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NbLogoutComponent } from '@nebular/auth';
+import { NbLogoutComponent, NbAuthService } from '@nebular/auth';
+
 
 
 @Component({
@@ -7,4 +8,5 @@ import { NbLogoutComponent } from '@nebular/auth';
   templateUrl: './logout.component.html',
 })
 export class LogoutComponent extends NbLogoutComponent {
+  
 }
