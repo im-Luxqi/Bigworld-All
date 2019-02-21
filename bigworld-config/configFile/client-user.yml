@@ -22,3 +22,15 @@ spring:
     show-sql: true
     open-in-view: false
 
+#忽略权限拦截
+management:
+  security:
+    enabled:  false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds:  30000  #缺省为1000
