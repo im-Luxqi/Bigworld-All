@@ -1,5 +1,6 @@
 package com.wxq.bigworld.servergateway.controller;
 
+import com.wxq.bigworld.servergateway.feign.UserServiceFeign;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtilTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,10 @@ public class PublicController {
     @Autowired
     JwtTokenUtilTest jwtTokenUtil;
 
+    @Autowired
+    UserServiceFeign userServiceFeign;
+
+
     @PostMapping("/login")
     public Map<String,Object> Home(){
 
@@ -32,6 +37,10 @@ public class PublicController {
         return map;
     }
 
+    @GetMapping("/come")
+    public void ac(){
+        userServiceFeign.test();
+    }
 
 
 
