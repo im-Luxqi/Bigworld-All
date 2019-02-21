@@ -35,3 +35,11 @@ hystrix:
           thread:
             timeoutInMilliseconds:  30000  #缺省为1000
 
+
+security:
+  user:
+    name: admin
+    password: admin
+    role: USER
+  basic:
+    enabled: false
