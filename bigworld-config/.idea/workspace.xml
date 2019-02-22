@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d53aac3-6e4c-4eff-b751-6a277f0d4a23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/.idea/httpRequests/2019-02-21T104034.401.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/.idea/httpRequests/2019-02-22T110748.500.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/.idea/httpRequests/2019-02-22T111503.500.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/bigworld-public/bigworld-public.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/bigworld-public/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/resources/builder/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/resources/mybatisDatabase.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/client-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/client-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/java/com/wxq/bigworld/clientuser/ClientUserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/java/com/wxq/bigworld/clientuser/ClientUserApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/java/com/wxq/bigworld/clientuser/web/controller/DcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/client-user/src/main/java/com/wxq/bigworld/clientuser/web/controller/DcController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/server-gateway/src/main/java/com/wxq/bigworld/servergateway/config/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/server-gateway/src/main/java/com/wxq/bigworld/servergateway/config/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-end/server-gateway/src/main/java/com/wxq/bigworld/servergateway/feign/UserServiceFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-end/server-gateway/src/main/java/com/wxq/bigworld/servergateway/feign/UserServiceFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-front/src/app/@core/mock/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-front/src/app/@core/mock/users.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/layouts/sample/sample.layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/layouts/sample/sample.layout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/styles/themes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../bigworld-front/src/app/@theme/styles/themes.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,14 +69,61 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-768828395">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="yml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="YAML" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="85" />
+          <entry key="yml" value="359" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="85" />
+          <entry key="YAML" value="359" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configFile/server-center.yml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/repos/bigworld/server-gateway.yml">
+        <entry file="file://$PROJECT_DIR$/configFile/client-user.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="438">
+              <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/configFile/server-gateway.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -61,12 +131,15 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/repos/bigworld/server-gateway.yml" />
+        <option value="$PROJECT_DIR$/configFile/server-gateway.yml" />
+        <option value="$PROJECT_DIR$/configFile/client-user.yml" />
       </list>
     </option>
   </component>
@@ -78,49 +151,44 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="30" />
-    <option name="y" value="103" />
-    <option name="width" value="1542" />
-    <option name="height" value="837" />
+    <option name="y" value="100" />
+    <option name="width" value="1545" />
+    <option name="height" value="840" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="bigworld-configcenter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigworld-configcenter" type="462c0819:PsiDirectoryNode" />
+              <item name="bigworld-config" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bigworld-config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="bigworld-configcenter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigworld-configcenter" type="462c0819:PsiDirectoryNode" />
-              <item name="repos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bigworld-configcenter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bigworld-configcenter" type="462c0819:PsiDirectoryNode" />
-              <item name="repos" type="462c0819:PsiDirectoryNode" />
-              <item name="bigworld" type="462c0819:PsiDirectoryNode" />
+              <item name="bigworld-config" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bigworld-config" type="462c0819:PsiDirectoryNode" />
+              <item name="configFile" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548234074607" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550822259506" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -150,6 +218,10 @@
       <workItem from="1548729184350" duration="1322000" />
       <workItem from="1548810316448" duration="1028000" />
       <workItem from="1548915114044" duration="1433000" />
+      <workItem from="1550562251965" duration="1285000" />
+      <workItem from="1550626659698" duration="6904000" />
+      <workItem from="1550709552720" duration="8308000" />
+      <workItem from="1550799590949" duration="7308000" />
     </task>
     <task id="LOCAL-00001" summary="redis">
       <created>1548227080988</created>
@@ -158,17 +230,65 @@
       <option name="project" value="LOCAL" />
       <updated>1548227080988</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="配置mysql">
+      <created>1550628633118</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550628633118</updated>
+    </task>
+    <task id="LOCAL-00003" summary="配置client-user的配置文件">
+      <created>1550711255060</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1550711255060</updated>
+    </task>
+    <task id="LOCAL-00004" summary="配置client-user的配置文件尝试解决fein 401问题">
+      <created>1550713975888</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1550713975888</updated>
+    </task>
+    <task id="LOCAL-00005" summary="尝试解决：内服务之间调用不做权限控制">
+      <created>1550730144099</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1550730144099</updated>
+    </task>
+    <task id="LOCAL-00006" summary="mybatis配置文件">
+      <created>1550802369077</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1550802369077</updated>
+    </task>
+    <task id="LOCAL-00007" summary="mybatis配置文件">
+      <created>1550805235133</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1550805235133</updated>
+    </task>
+    <task id="LOCAL-00008" summary="mybatis配置文件">
+      <created>1550816313677</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1550816313677</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8241000" />
+    <option name="totallyTimeSpent" value="32046000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="916" extended-state="7" />
-    <editor active="true" />
+    <frame x="56" y="-7" width="1487" height="878" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25502008" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30790764" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -183,9 +303,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.30523628" />
+      <window_info anchor="bottom" id="Version Control" order="10" visible="true" weight="0.033512063" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -200,18 +320,63 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="redis" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis" />
+    <MESSAGE value="配置mysql" />
+    <MESSAGE value="配置client-user的配置文件" />
+    <MESSAGE value="配置client-user的配置文件尝试解决fein 401问题" />
+    <MESSAGE value="尝试解决：内服务之间调用不做权限控制" />
+    <MESSAGE value="mybatis配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="mybatis配置文件" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/repos/bigworld/server-gateway.yml">
+    <entry file="file://$PROJECT_DIR$/repos/bigworld/server-gateway.yml" />
+    <entry file="file://$PROJECT_DIR$/configFile/server-center.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configFile/server-gateway.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="138">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configFile/client-user.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
         </state>
       </provider>
     </entry>

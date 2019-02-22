@@ -29,6 +29,7 @@
         <module>server-config-git</module>
         <module>server-gateway</module>
         <module>client-user</module>
+        <module>bigworld-public</module>
     </modules>
     <packaging>pom</packaging>
     <developers>

@@ -8,6 +8,9 @@ $nb-enabled-themes: (default, cosmic, corporate);
 
 $nb-themes: nb-register-theme((
  // app wise variables for each theme
+  menu-active-bg: #d8d8d7,
+  menu-submenu-active-bg: yellow,
+  menu-submenu-active-border-color: black,
   color-bg: #f0f0f0,
   shadow: 0 6px 15px 0 #8b8da5,
 

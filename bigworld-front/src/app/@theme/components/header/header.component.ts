@@ -34,14 +34,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.getUsers().subscribe(
         (users: any) =>{
-          this.user = users.nick
+          this.user = users.jz
         }
     );
 
-      // this.menuService.onItemClick().subscribe(event => {
-      //   console.log(event);
-      //   this.onContecxtItemSelection(event.item.title);
-      // });
       this.menuService.onItemClick()
           .pipe(
             map((tag:any)=> tag.item.title))
@@ -53,9 +49,7 @@ export class HeaderComponent implements OnInit {
               case "Settings":
                 break;
               case "Log out":
-              console.log("qwer");
                 this.router.navigate(["auth/logout"]);
-                // window.location.href = "/#/auth/logout";
                 break;
             }
           })

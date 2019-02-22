@@ -14,6 +14,7 @@ export class UserService extends UserData {
     lee: { name: 'Lee Wong', picture: 'assets/images/lee.png' },
     alan: { name: 'Alan Thompson', picture: 'assets/images/alan.png' },
     kate: { name: 'Kate Martinez', picture: 'assets/images/kate.png' },
+    jz: { name: '香港记者', picture: 'assets/images/cover2.jpg' },
   };
   private types = {
     mobile: 'mobile',

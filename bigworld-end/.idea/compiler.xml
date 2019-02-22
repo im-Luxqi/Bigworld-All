@@ -6,11 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bigworld-public" />
         <module name="client-user" />
         <module name="server-center" />
         <module name="server-config-git" />
         <module name="server-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bigworld-public" target="1.8" />
+      <module name="bigworldpublic" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
