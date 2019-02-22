@@ -43,3 +43,7 @@ security:
     role: USER
   basic:
     enabled: false
+
+mybatis:
+  basepackage: com.wxq.bigworld.clientuser.web.mapper
+  xmlLocation: classpath:mappings/**/*.xml
