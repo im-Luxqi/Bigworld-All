@@ -46,4 +46,4 @@ security:
 
 mybatis:
   basepackage: com.wxq.bigworld.clientuser.web.mapper
-  xmlLocation: classpath:mappings/**/*.xml
+  xmlLocation: classpath:mappings/*.xml
