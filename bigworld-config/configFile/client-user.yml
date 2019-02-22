@@ -45,5 +45,5 @@ security:
     enabled: false
 
 mybatis:
-  basepackage: com.wxq.bigworld.clientuser.web.mapper
-  xmlLocation: classpath:mappings/*.xml
+  type-aliases-package: com.wxq.bigworld.clientuser.web.mapper
+  mapper-locations: classpath:mappings/*.xml
