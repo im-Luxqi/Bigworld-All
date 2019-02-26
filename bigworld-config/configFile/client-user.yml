@@ -45,7 +45,7 @@ security:
     enabled: false
 
 mybatis:
-  type-aliases-package: com.wxq.bigworld.clientuser.web.mapper
+  type-aliases-package: com.wxq.bigworld.clientuser.web.Dao
   mapper-locations: classpath:mappings/*.xml
 
 swagger:
