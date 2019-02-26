@@ -47,3 +47,10 @@ security:
 mybatis:
   type-aliases-package: com.wxq.bigworld.clientuser.web.mapper
   mapper-locations: classpath:mappings/*.xml
+
+swagger:
+  basepackage: com.wxq.bigworld.clientuser.web.controller
+  service:
+    name: client-user
+    description: client-user后端服务接口
+    developer: F1
