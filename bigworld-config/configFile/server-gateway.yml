@@ -34,3 +34,11 @@ hystrix:
           strategy: SEMAPHORE
           thread:
             timeoutInMilliseconds: 60000
+
+
+
+#bigworld配置
+bigworld:
+  security:
+    authorize:
+      permitUrls: /register    ,/helll
