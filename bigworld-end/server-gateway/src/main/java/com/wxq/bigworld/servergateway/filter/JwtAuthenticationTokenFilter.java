@@ -1,13 +1,13 @@
 package com.wxq.bigworld.servergateway.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.wxq.bigworld.pub.common.HttpReply;
 import com.wxq.bigworld.servergateway.config.ParameterRequestWrapper;
 import com.wxq.bigworld.servergateway.enums.JwtRedisEnum;
 import com.wxq.bigworld.servergateway.enums.JwtUrlEnum;
 import com.wxq.bigworld.servergateway.properties.AuthenticationProperties;
 import com.wxq.bigworld.servergateway.properties.AuthorizeProperties;
 import com.wxq.bigworld.servergateway.properties.SecurityPropertiess;
-import com.wxq.bigworld.servergateway.response.ResponseEntity;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtil;
 import com.wxq.bigworld.servergateway.util.PublicUtil;
 import org.apache.commons.lang.ArrayUtils;
@@ -28,17 +28,13 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
  * JWT过滤器
- *
  */
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
@@ -72,7 +68,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             return;
         }
 
-        if (! securityPropertiess.getJwt().isPreventsGetMethod()) {
+        if (!securityPropertiess.getJwt().isPreventsGetMethod()) {
             if (Objects.equals(RequestMethod.GET.toString(), request.getMethod())) {
                 logger.info("jwt不拦截此路径因为开启了不拦截GET请求：【{}】，请求方式为：【{}】", request.getRequestURI(), request.getMethod());
                 filterChain.doFilter(request, response);
@@ -82,15 +78,15 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         // 排除路径，并且如果是options请求是cors跨域预请求，设置allow对应头信息
         String[] permitUrls = getPermitUrls();
-        for (int i = 0, length = permitUrls.length; i < length; i ++) {
+        for (int i = 0, length = permitUrls.length; i < length; i++) {
             if (antPathMatcher.match(permitUrls[i], request.getRequestURI())
                     || Objects.equals(RequestMethod.OPTIONS.toString(), request.getMethod())) {
                 logger.info("jwt不拦截此路径：【{}】，请求方式为：【{}】", request.getRequestURI(), request.getMethod());
 
 
                 //如果是登陆将request payload -------> request parameters
-                if(antPathMatcher.match("/login",request.getRequestURI())){
-                    Map<String,Object> requestBody = publicUtil.getRequestBody(request);
+                if (antPathMatcher.match("/login", request.getRequestURI())) {
+                    Map<String, Object> requestBody = publicUtil.getRequestBody(request);
                     request = new ParameterRequestWrapper(request, requestBody);
                 }
 
@@ -101,7 +97,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         // 获取Authorization
         String authHeader = request.getHeader("Authorization");
-        if (StringUtils.isBlank(authHeader) || ! authHeader.startsWith("Bearer ")) {
+        if (StringUtils.isBlank(authHeader) || !authHeader.startsWith("Bearer ")) {
             logger.error("Authorization的开头不是Bearer，Authorization===>【{}】", authHeader);
             responseEntity(response, HttpStatus.UNAUTHORIZED.value(), "暂无权限！");
             return;
@@ -130,13 +126,13 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         // 验证token是否存在（过期了也会消失）
         Object token = redisTemplate.opsForValue().get(JwtRedisEnum.getTokenKey(username, randomKey));
         if (Objects.isNull(token)) {
-            logger.info("Redis里没查到key【{}】对应的value！", JwtRedisEnum.getTokenKey( username, randomKey));
+            logger.info("Redis里没查到key【{}】对应的value！", JwtRedisEnum.getTokenKey(username, randomKey));
             responseEntity(response, HttpStatus.UNAUTHORIZED.value(), "token已过期！");
             return;
         }
 
         // 判断传来的token和存到redis的token是否一致
-        if (! Objects.equals(token.toString(), authToken)) {
+        if (!Objects.equals(token.toString(), authToken)) {
             logger.error("前端传来的token【{}】和redis里的token【{}】不一致！", authToken, token.toString());
             responseEntity(response, HttpStatus.UNAUTHORIZED.value(), "暂无权限！");
             return;
@@ -157,7 +153,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         /*
          * 退出登录不刷新token，因为假设退出登录操作，刷新token了，这样清除的是旧的token，相当于根本没退出成功
          */
-        if (! Objects.equals(request.getRequestURL(), JwtUrlEnum.LOGOUT.url())) {
+        if (!Objects.equals(request.getRequestURL(), JwtUrlEnum.LOGOUT.url())) {
             // token过期时间小于等于多少秒，自动刷新token
             if (surplusExpireTime <= securityPropertiess.getJwt().getAutoRefreshTokenExpiration()) {
                 // 1.删除之前的token
@@ -205,7 +201,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 //        String[] validatePermitUrls = ValidateAuthorizeConfigProvider.getPermitUrls();
         String[] validatePermitUrls = {"/login"};
         /** 返回的数组 */
-        return (String[])ArrayUtils.addAll(corePermitUrls, validatePermitUrls);
+        return (String[]) ArrayUtils.addAll(corePermitUrls, validatePermitUrls);
     }
 
     private void responseEntity(HttpServletResponse response, Integer status, String msg) {
@@ -214,7 +210,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         try {
             response.getWriter().write(
                     JSON.toJSONString(
-                            new ResponseEntity(status, msg).data(null)));
+                            new HttpReply(status, msg).data(null)));
         } catch (IOException e) {
             e.printStackTrace();
         }

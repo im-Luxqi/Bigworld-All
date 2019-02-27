@@ -1,5 +1,7 @@
 package com.wxq.bigworld.servergateway.config;
 
+import com.wxq.bigworld.pub.user.UserAccountPub;
+import com.wxq.bigworld.pub.user.UserInfo;
 import com.wxq.bigworld.servergateway.feign.UserServiceFeign;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -28,10 +30,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if (StringUtils.isBlank(username)) {
             throw new UsernameNotFoundException("用户名为空");
         }
-//        String test = userService.test();
-
-        List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<SimpleGrantedAuthority>();
-        simpleGrantedAuthorities.add(new SimpleGrantedAuthority("user"));
-        return new User(username, "111111", simpleGrantedAuthorities);
+        UserAccountPub byUsername = userService.getByUsername(username);
+        if(byUsername==null){
+            throw new UsernameNotFoundException("账号不存在");
+        }
+        return new UserInfo(byUsername);
     }
 }

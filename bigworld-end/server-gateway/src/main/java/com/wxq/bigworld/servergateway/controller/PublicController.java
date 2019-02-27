@@ -1,5 +1,6 @@
 package com.wxq.bigworld.servergateway.controller;
 
+import com.wxq.bigworld.pub.common.HttpReply;
 import com.wxq.bigworld.servergateway.feign.UserServiceFeign;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtilTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
+@RestController
 public class PublicController {
 
     @Autowired
@@ -39,9 +40,15 @@ public class PublicController {
 
     @GetMapping("/come")
     public void ac(){
-        userServiceFeign.test();
+//        userServiceFeign.test();
     }
 
+    @PostMapping("/register")
+    public HttpReply register(){
+
+
+        return new HttpReply();
+    }
 
 
 }

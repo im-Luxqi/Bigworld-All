@@ -120,7 +120,10 @@ export const NB_CORE_PROVIDERS = [
           defaultMessages: ['You have been successfully logged in.'],
         },
         register: {
-          endpoint: '/auth/register',
+          endpoint: '/apis/register',
+          method: 'post',
+          defaultErrors: ['Login/Email combination is not correct, please try again.'],
+          defaultMessages: ['You have been successfully logged in.'],
         },
         logout: {
           

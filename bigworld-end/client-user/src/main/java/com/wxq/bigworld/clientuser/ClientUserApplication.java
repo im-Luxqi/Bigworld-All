@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan("com.wxq.bigworld.clientuser.web.mapper")
+@MapperScan("com.wxq.bigworld.clientuser.web.Dao")
 @EnableJpaRepositories(basePackages = {}, repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)
 public class ClientUserApplication {
 

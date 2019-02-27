@@ -1,40 +1,32 @@
-package com.wxq.bigworld.servergateway.response;
+package com.wxq.bigworld.pub.common;
 
 /**
  * 返回结果
- *
  */
-public class ResponseEntity {
+public class HttpReply {
+    private int code;//状态码
+    private String msg;//提示语
+    private String token;//jwt
+    private Object data;//返回数据
 
-    /** 状态码 */
-    private int code;
-
-    /** 提示语 */
-    private String msg;
-    //    token
-    private String token;
-
-    /** 返回数据 */
-    private Object data;
-
-    public ResponseEntity() {
+    public HttpReply() {
     }
-
-
-    public ResponseEntity(int code, String msg, String token) {
+    public HttpReply(int code, String msg, String token) {
         this.code = code;
         this.msg = msg;
         this.token = token;
     }
-
-    public ResponseEntity(int code, String msg) {
+    public HttpReply(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
-
-    public ResponseEntity data(Object data) {
+    public HttpReply data(Object data) {
         this.data = data;
         return this;
+    }
+
+    public HttpReply(String msg) {
+        this.msg = msg;
     }
 
     public int getCode() {

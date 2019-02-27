@@ -1,7 +1,7 @@
 package com.wxq.bigworld.servergateway.config;
 
 import com.alibaba.fastjson.JSON;
-import com.wxq.bigworld.servergateway.response.ResponseEntity;
+import com.wxq.bigworld.pub.common.HttpReply;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -21,9 +21,11 @@ public class AppAuthenticationFailureHandler extends SimpleUrlAuthenticationFail
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException,RuntimeException {
         logger.info("登录失败！");
-        response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(JSON.toJSONString(new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage()).data(null)));
+
+        throw new RuntimeException("登录失败");
+//        response.setContentType("application/json;charset=UTF-8");
+//        response.getWriter().write(JSON.toJSONString(new HttpReply(HttpStatus.INTERNAL_SERVER_ERROR.value(), exception.getMessage()).data(null)));
     }
 }

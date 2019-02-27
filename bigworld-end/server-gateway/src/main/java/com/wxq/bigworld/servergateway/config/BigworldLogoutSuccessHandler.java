@@ -1,8 +1,8 @@
 package com.wxq.bigworld.servergateway.config;
 
 import com.alibaba.fastjson.JSON;
+import com.wxq.bigworld.pub.common.HttpReply;
 import com.wxq.bigworld.servergateway.enums.JwtRedisEnum;
-import com.wxq.bigworld.servergateway.response.ResponseEntity;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,7 +42,7 @@ public class BigworldLogoutSuccessHandler implements LogoutSuccessHandler {
 
             response.setHeader("Authorization", "");
             response.setContentType("application/json;charset=UTF-8");
-            response.getWriter().write(JSON.toJSONString(new ResponseEntity(HttpStatus.OK.value(), "退出成功！").data(null)));
+            response.getWriter().write(JSON.toJSONString(new HttpReply(HttpStatus.OK.value(), "退出成功！").data(null)));
 
         } else {
             throw new RuntimeException("暂无权限");

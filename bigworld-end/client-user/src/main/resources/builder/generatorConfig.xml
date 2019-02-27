@@ -54,7 +54,7 @@
         <javaClientGenerator targetPackage="com.wxq.bigworld.clientuser.web.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
-        <table tableName="chat" domainObjectName="Chat">
+        <table tableName="party_group" domainObjectName="PartyGroup">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
     </context>

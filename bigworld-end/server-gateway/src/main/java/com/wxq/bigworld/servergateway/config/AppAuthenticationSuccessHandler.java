@@ -1,10 +1,9 @@
 package com.wxq.bigworld.servergateway.config;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSON;
+import com.wxq.bigworld.pub.common.HttpReply;
 import com.wxq.bigworld.servergateway.enums.JwtRedisEnum;
 import com.wxq.bigworld.servergateway.properties.SecurityPropertiess;
-import com.wxq.bigworld.servergateway.response.ResponseEntity;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,9 +17,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -70,7 +67,7 @@ public class AppAuthenticationSuccessHandler extends SavedRequestAwareAuthentica
         );
         response.setHeader("Authorization", "Bearer " + token);
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(JSON.toJSONString(new ResponseEntity(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(),token).data(authentication)));
+        response.getWriter().write(JSON.toJSONString(new HttpReply(HttpStatus.OK.value(), HttpStatus.OK.getReasonPhrase(), token).data(authentication)));
     }
 
     /**
