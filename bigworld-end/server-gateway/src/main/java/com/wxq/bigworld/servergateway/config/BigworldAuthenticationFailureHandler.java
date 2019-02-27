@@ -16,7 +16,7 @@ import java.io.IOException;
 /**
  * 自定义失败处理器
  */
-public class AppAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
+public class BigworldAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 

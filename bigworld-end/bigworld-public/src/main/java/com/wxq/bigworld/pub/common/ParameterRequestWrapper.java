@@ -1,8 +1,14 @@
-package com.wxq.bigworld.servergateway.config;
+package com.wxq.bigworld.pub.common;
 
+
+import com.alibaba.fastjson.JSON;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -59,6 +65,44 @@ public class ParameterRequestWrapper extends HttpServletRequestWrapper {
                 params.put(name, new String[]{String.valueOf(value)});
             }
         }
+    }
+
+
+    /**
+     * 获取request payload 数据
+     *
+     * @param request
+     * @return
+     * @throws IOException
+     */
+    public static Map<String, Object> getRequestBody(HttpServletRequest request) throws IOException {
+        String body = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader bufferedReader = null;
+        try {
+            InputStream inputStream = request.getInputStream();
+            if (inputStream != null) {
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                char[] charBuffer = new char[128];
+                int bytesRead = -1;
+                while ((bytesRead = bufferedReader.read(charBuffer)) > 0) {
+                    stringBuilder.append(charBuffer, 0, bytesRead);
+                }
+            } else {
+                stringBuilder.append("");
+            }
+        } catch (IOException ex) {
+            throw ex;
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException ex) {
+                    throw ex;
+                }
+            }
+        }
+        return (Map) JSON.parse(stringBuilder.toString());
     }
 }
 

@@ -3,7 +3,7 @@ package com.wxq.bigworld.servergateway.config;
 import com.alibaba.fastjson.JSON;
 import com.wxq.bigworld.pub.common.HttpReply;
 import com.wxq.bigworld.servergateway.enums.JwtRedisEnum;
-import com.wxq.bigworld.servergateway.properties.SecurityPropertiess;
+import com.wxq.bigworld.servergateway.properties.PublicProperties;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author chentongwei@bshf360.com 2018-03-26 14:09
  */
-public class AppAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+public class BigWorldAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
@@ -34,7 +34,7 @@ public class AppAuthenticationSuccessHandler extends SavedRequestAwareAuthentica
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
     @Autowired
-    private SecurityPropertiess securityPropertiess;
+    private PublicProperties securityPropertiess;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {

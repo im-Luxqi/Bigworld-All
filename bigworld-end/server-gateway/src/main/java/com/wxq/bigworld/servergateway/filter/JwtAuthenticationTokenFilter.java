@@ -2,15 +2,11 @@ package com.wxq.bigworld.servergateway.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.wxq.bigworld.pub.common.HttpReply;
-import com.wxq.bigworld.servergateway.config.ParameterRequestWrapper;
+import com.wxq.bigworld.pub.common.ParameterRequestWrapper;
 import com.wxq.bigworld.servergateway.enums.JwtRedisEnum;
 import com.wxq.bigworld.servergateway.enums.JwtUrlEnum;
-import com.wxq.bigworld.servergateway.properties.AuthenticationProperties;
-import com.wxq.bigworld.servergateway.properties.AuthorizeProperties;
-import com.wxq.bigworld.servergateway.properties.SecurityPropertiess;
+import com.wxq.bigworld.servergateway.properties.PublicProperties;
 import com.wxq.bigworld.servergateway.util.JwtTokenUtil;
-import com.wxq.bigworld.servergateway.util.PublicUtil;
-import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,15 +39,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
-    @Autowired
-    private PublicUtil publicUtil;
 
     @Autowired
-    private SecurityPropertiess securityPropertiess;
-    @Autowired
-    private AuthenticationProperties authenticationProperties;
-    @Autowired
-    private AuthorizeProperties authorizeProperties;
+    private PublicProperties publicProperties;
 
     @Autowired
     private StringRedisTemplate redisTemplate;
@@ -68,7 +58,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             return;
         }
 
-        if (!securityPropertiess.getJwt().isPreventsGetMethod()) {
+        if (!publicProperties.getJwt().isPreventsGetMethod()) {
             if (Objects.equals(RequestMethod.GET.toString(), request.getMethod())) {
                 logger.info("jwt不拦截此路径因为开启了不拦截GET请求：【{}】，请求方式为：【{}】", request.getRequestURI(), request.getMethod());
                 filterChain.doFilter(request, response);
@@ -77,7 +67,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
 
         // 排除路径，并且如果是options请求是cors跨域预请求，设置allow对应头信息
-        String[] permitUrls = getPermitUrls();
+        String[] permitUrls = publicProperties.getPermitUrls();
         for (int i = 0, length = permitUrls.length; i < length; i++) {
             if (antPathMatcher.match(permitUrls[i], request.getRequestURI())
                     || Objects.equals(RequestMethod.OPTIONS.toString(), request.getMethod())) {
@@ -86,7 +76,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
                 //如果是登陆将request payload -------> request parameters
                 if (antPathMatcher.match("/login", request.getRequestURI())) {
-                    Map<String, Object> requestBody = publicUtil.getRequestBody(request);
+                    Map<String, Object> requestBody = ParameterRequestWrapper.getRequestBody(request);
                     request = new ParameterRequestWrapper(request, requestBody);
                 }
 
@@ -155,7 +145,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
          */
         if (!Objects.equals(request.getRequestURL(), JwtUrlEnum.LOGOUT.url())) {
             // token过期时间小于等于多少秒，自动刷新token
-            if (surplusExpireTime <= securityPropertiess.getJwt().getAutoRefreshTokenExpiration()) {
+            if (surplusExpireTime <= publicProperties.getJwt().getAutoRefreshTokenExpiration()) {
                 // 1.删除之前的token
                 redisTemplate.delete(JwtRedisEnum.getTokenKey(username, randomKey));
 
@@ -168,7 +158,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 response.setHeader("randomKey", newRandomKey);
                 redisTemplate.opsForValue().set(JwtRedisEnum.getTokenKey(username, newRandomKey),
                         newAuthToken,
-                        securityPropertiess.getJwt().getExpiration(),
+                        publicProperties.getJwt().getExpiration(),
                         TimeUnit.SECONDS);
                 logger.info("重新生成token【{}】和randomKey【{}】", newAuthToken, newRandomKey);
 
@@ -177,7 +167,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
                 redisTemplate.opsForValue().set(JwtRedisEnum.getAuthenticationKey(username, newRandomKey),
                         authentication,
-                        securityPropertiess.getJwt().getExpiration(),
+                        publicProperties.getJwt().getExpiration(),
                         TimeUnit.SECONDS);
 
                 // 删除旧的认证信息,这里设置50s后自动到期，是因为在实际应用中有可能从authentication里获取用户唯一标识
@@ -192,17 +182,6 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String[] getPermitUrls() {
-
-        /** 核心模块相关的URL */
-        String[] corePermitUrls = publicUtil.getPermitUrls(authorizeProperties.getPermitUrls());
-//        String[] corePermitUrls = coreAuthorizeConfigProvider.getPermitUrls();
-        /** 验证模块相关的URL */
-//        String[] validatePermitUrls = ValidateAuthorizeConfigProvider.getPermitUrls();
-        String[] validatePermitUrls = {"/login"};
-        /** 返回的数组 */
-        return (String[]) ArrayUtils.addAll(corePermitUrls, validatePermitUrls);
-    }
 
     private void responseEntity(HttpServletResponse response, Integer status, String msg) {
         response.setContentType("application/json;charset=UTF-8");

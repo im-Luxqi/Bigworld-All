@@ -1,5 +1,6 @@
 package com.wxq.bigworld.servergateway.properties;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
 /**
@@ -74,4 +75,7 @@ public class JwtProperties {
     public void setPreventsGetMethod(boolean preventsGetMethod) {
         this.preventsGetMethod = preventsGetMethod;
     }
+
+
+
 }

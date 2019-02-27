@@ -50,12 +50,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AuthenticationSuccessHandler authenticationSuccessHandler() {
-        return new AppAuthenticationSuccessHandler();
+        return new BigWorldAuthenticationSuccessHandler();
     }
 
     @Bean
     public AuthenticationFailureHandler authenticationFailureHandler() {
-        return new AppAuthenticationFailureHandler();
+        return new BigworldAuthenticationFailureHandler();
     }
 
 
